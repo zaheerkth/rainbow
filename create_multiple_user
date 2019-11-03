@@ -1,0 +1,11 @@
+---
+- hosts: linoop
+  tasks:
+  - name: add several users programs
+    user:
+       name: "{{ item }}"
+       groups: "wheel"
+       state: present
+    with_items:
+     - testuser1
+     - testuser2
